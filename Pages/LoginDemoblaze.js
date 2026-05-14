@@ -1,4 +1,4 @@
-//import { AddCart } from "./AddtoCart"
+import { InventoryPage } from "./DemoblazeInventory.js"
 
 export class LoginDemoblaze{  
     
@@ -18,6 +18,27 @@ async login(user,pass){
     await this.userName.fill(user)
     await this.password.fill(pass)
     await this.loginb.click() 
-   // return new AddCart(this.page)
+   return new InventoryPage(this.page)
 }
+
+// INVALID LOGIN METHOD
+    async invalidLogin(user,pass){
+
+        await this.loginbut.click()
+
+        await this.userName.fill(user)
+        await this.password.fill(pass)
+
+        const alertPromise = this.page.waitForEvent('dialog')
+
+        await this.loginb.click()
+
+        const dialog = await alertPromise
+
+        const message = dialog.message()
+
+        await dialog.accept()
+
+        return message
+    }
 }

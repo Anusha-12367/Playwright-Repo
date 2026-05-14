@@ -10,3 +10,14 @@ test('Signup in home screen',async({page})=>{
         const pass=validLogindata.password
         await signpage.signup(user,pass)
 })
+test('Signup close button test',async({page})=>{
+
+    const signpage = new SignupPage(page)
+
+    await signpage.goto()
+
+    await signpage.enterSignupDetails('anusha','test123')
+
+    await signpage.closeButton()
+
+})

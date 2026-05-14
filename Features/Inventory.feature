@@ -9,5 +9,5 @@ Examples:
     | username        | password     | result         | count |
     | standard_user   | secret_sauce | inventory page | 6     |
     | problem_user    | secret_sauce | inventory page | 6     |
-    | locked_out_user | secret_sauce | error message  | 0    |
+    | locked_out_user | secret_sauce | error message  | 0     |
 
