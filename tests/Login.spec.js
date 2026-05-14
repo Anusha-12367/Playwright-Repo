@@ -2,7 +2,7 @@ import{test,expect} from '@playwright/test'
 test.beforeEach(async({page})=>{
 await page.goto('https://www.saucedemo.com')
 })
-const validLogindata=require('../Utils/Testdata.json')//json data import--diff folder../same folder .
+import validLogindata from '../Utils/Testdata.json' //json data import--diff folder../same folder .
 test('Login using valid credentials',async({page})=>{
 
     const usernamevalue=validLogindata.username
